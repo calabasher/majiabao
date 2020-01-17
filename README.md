@@ -164,3 +164,4 @@ new Vue({
 	store,
 }).$mount('#app')
 ```
+# majiabao
