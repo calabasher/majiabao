@@ -49,9 +49,9 @@ const state = {
 		"type": "MORE",
 		"topic_name": "2、1*1=",
 		"active_id": 1,
-		"active_title": "欢乐星期五标题",
-		"active_topic_phase": "第一周",
-		"active_start_time": "1479139200",
+		"active_title": "",
+		"active_topic_phase": "happy",
+		"active_start_time": "two",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
 			"topic_answer_id": 5,
@@ -80,8 +80,8 @@ const state = {
 		"type": "MORE",
 		"topic_name": "3、4*8-1=",
 		"active_id": 1,
-		"active_title": "欢乐星期五标题",
-		"active_topic_phase": "第一周",
+		"active_title": "happy",
+		"active_topic_phase": "three",
 		"active_start_time": "1479139200",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
@@ -92,12 +92,12 @@ const state = {
 		}, {
 			"topic_answer_id": 10,
 			"topic_id": 21,
-			"answer_name": "01",
+			"answer_name": "28",
 			"is_standard_answer": 0
 		}, {
 			"topic_answer_id": 11,
 			"topic_id": 21,
-			"answer_name": "01",
+			"answer_name": "10",
 			"is_standard_answer": 0
 		}, {
 			"topic_answer_id": 12,
@@ -111,8 +111,8 @@ const state = {
 		"type": "MORE",
 		"topic_name": "4、5-5*5=",
 		"active_id": 1,
-		"active_title": "欢乐星期五标题",
-		"active_topic_phase": "第一周",
+		"active_title": "happy",
+		"active_topic_phase": "four",
 		"active_start_time": "1479139200",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
@@ -142,8 +142,8 @@ const state = {
 		"type": "MORE",
 		"topic_name": "5、4*5-1 ",
 		"active_id": 1,
-		"active_title": "欢乐星期五标题",
-		"active_topic_phase": "第一周",
+		"active_title": "happy",
+		"active_topic_phase": "five",
 		"active_start_time": "1479139200",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
