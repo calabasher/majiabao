@@ -2,10 +2,10 @@
   	<section>
     	<header class="top_tips">
     		<span class="num_tip" v-if="fatherComponent == 'home'">{{level}}</span>
-    		<span class="num_tip" v-if="fatherComponent == 'item'">题目{{itemNum}}</span>
+    		<span class="num_tip" v-if="fatherComponent == 'item'">judul {{itemNum}}</span>
     	</header>
     	<div v-if="fatherComponent == 'home'" >
-    		<div class="home_logo item_container_style"></div>
+    		<div class="home_logo item_container_style">Belajarlah bersama, untuk mengalami keindahan matematika</div>
     		<router-link to="item" class="start button_style" ></router-link>
     	</div>
     	<div v-if="fatherComponent == 'item'" >
@@ -13,7 +13,7 @@
     			<div class="item_list_container" v-if="itemDetail.length > 0">
     				<header class="item_title">{{itemDetail[itemNum-1].topic_name}}</header>
     				<ul>
-    					<li  v-for="(item, index) in itemDetail[itemNum-1].topic_answer" @click="choosed(index, item.topic_answer_id)" class="item_list">
+    					<li  v-for="(item, index) in itemDetail[itemNum-1].topic_answer" :key="index" @click="choosed(index, item.topic_answer_id)" class="item_list">
     						<span class="option_style" v-bind:class="{'has_choosed':choosedNum==index}">{{chooseType(index)}}</span>
     						<span class="option_detail">{{item.answer_name}}</span>
     					</li>
@@ -44,10 +44,25 @@ export default {
   		'itemDetail', //题目详情
   		'timer', //计时器
 	]),
+	created(){
+		this.andriodLink();
+		//初始化信息
+		if(this.fatherComponent == 'home') {
+			this.initializeData();
+			document.body.style.backgroundImage = 'url(./static/img/1-1.jpg)';
+		}
+	},
   	methods: {
   		...mapActions([
   			'addNum', 'initializeData',
-  		]),
+		  ]),
+		andriodLink() {
+			// 获取来源入口，请求要给中台的数据
+			let that = this
+			that.$bridge.callHandler('encrypt', '', (reData) => {
+				let data = JSON.parse(reData)
+			})
+		},
   		//点击下一题
   		nextItem(){
   			if (this.choosedNum !== null) {
@@ -55,7 +70,7 @@ export default {
 	  			//保存答案, 题目索引加一，跳到下一题
 	  			this.addNum(this.choosedId)
   			}else{
-  				alert('您还没有选择答案哦')
+  				alert("Kau belum memilih jawabannya")
   			}
   		},
   		//索引0-3对应答案A-B
@@ -79,16 +94,9 @@ export default {
 	  			clearInterval(this.timer)
 	  			this.$router.push('score')
   			}else{
-  				alert('您还没有选择答案哦')
+  				alert('Kau belum memilih jawabannya')
   			}
 	  	},
-	},
-	created(){
-		//初始化信息
-		if(this.fatherComponent == 'home') {
-			this.initializeData();
-			document.body.style.backgroundImage = 'url(./static/img/1-1.jpg)';
-		}
 	}
 }
 </script>
@@ -125,9 +133,12 @@ export default {
 		left: 1rem;
 	}	
 	.home_logo{
-		background-image: url(../images/1-2.png);
-		background-size: 13.142rem 100%;
-		background-position: right center;
+		height: 15rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 4rem 1rem;
+		color: #fff;
 	}
 	.item_back{
 		background-image: url(../images/2-1.png);
@@ -163,7 +174,7 @@ export default {
     }
 	.item_title{
 		font-size: 0.65rem;
-		color: #00e;
+		color: #fff;
 		line-height: 0.7rem;
 	}
 	.item_list{
@@ -173,7 +184,7 @@ export default {
 		span{
 			display: inline-block;
 			font-size: 0.6rem;
-			color: #00e;
+			color: #fff;
 			vertical-align: middle;
 		}
 		.option_style{

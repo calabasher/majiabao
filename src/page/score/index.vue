@@ -1,17 +1,10 @@
 <template>
   	<div>
     	<div class="your_scores_container">
-            <header class="your_scores"><span class="score_num">{{score}}</span><span class="fenshu">分！</span></header>
+            <header class="your_scores"><span class="score_num">{{score}}</span><span class="fenshu"> Poin.</span></header>
             <div class="result_tip">{{scoreTips}}</div>
         </div>
-        <div class="share_button" @click="showCover"></div>
-        <div class="share_code">
-            <header class="share_header">关注葡萄之家，获取答案。</header>
-            <img src="../../images/4-4.png" height="212" width="212" class="code_img"> 
-        </div>
-        <div class="share_cover" v-show="showHide" @click="showCover">
-            <img src="../../images/5-2.png" class="share_img">
-        </div>
+        <div @click="natTo('/')" class="flex-center border">try again</div>
   	</div>
 </template>
 
@@ -25,7 +18,13 @@ export default {
             score: 0, //分数
             scoreTips:'', //分数提示
             rightAnswer: [2, 7, 12, 13, 18], //正确答案
-            scoreTipsArr:['你说，是不是把知识都还给小学老师了？','还不错，但还需要继续加油哦！','不要嘚瑟还有进步的空间！','智商离爆表只差一步了！','你也太聪明啦，葡萄之家欢迎你！'],
+            scoreTipsArr:[
+                'Apa kau tidak mengembalikan semua pengetahuan kepada guru sekolah dasar？',
+                'Tidak buruk, tapi masih perlu mengisi bahan bakar.',
+                'Tak boleh berpacu secepat kilat!',
+                'Iq akan meledak!',
+                'Kau terlalu pintar untuk itu'
+            ],
         }
     },
     computed: mapState(['answerid']),
@@ -34,7 +33,16 @@ export default {
         this.getScoreTip();
         document.body.style.backgroundImage = 'url(./static/img/4-1.jpg)';
     },
+    mounted(){
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+    },
     methods: {
+        natTo(pathName){
+            this.$router.replace(pathName)
+        },
         //计算分数
         computedScore(){
             this.answerid.forEach((item, index) => {
@@ -59,13 +67,13 @@ export default {
 
 <style lang="less">
     body{
-        background-image: url(../../images/4-1.jpg);
+        // background-image: url(../../images/4-1.jpg);
         padding-top: 1.2rem;
     }
     .your_scores_container{
         width: 9.7rem;
         height: 9.1rem;
-        background: url(../../images/4-2.png) no-repeat;
+        // background: url(../../images/4-2.png) no-repeat;
         background-size: 100% 100%;
         margin: 0 auto 0;
         position: relative;
@@ -74,7 +82,8 @@ export default {
             width: 100%;
             text-indent: 3.3rem;
             top: 4.7rem;
-            font-size: 1.4rem;
+            right: 10%;
+            font-size: 1.3rem;
             font-weight: 900;
             -webkit-text-stroke: 0.05rem #412318;
             font-family: 'Microsoft YaHei';
