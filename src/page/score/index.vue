@@ -4,7 +4,8 @@
             <header class="your_scores"><span class="score_num">{{score}}</span><span class="fenshu"> Poin.</span></header>
             <div class="result_tip">{{scoreTips}}</div>
         </div>
-        <div @click="natTo('/')" class="flex-center border">try again</div>
+        <!-- <div @click="natTo('/')" class="ok-img flex-center border">try again</div> -->
+    	<span class="submit_item button_style" @click="natTo('/')"></span>
   	</div>
 </template>
 
@@ -67,7 +68,7 @@ export default {
 
 <style lang="less">
     body{
-        // background-image: url(../../images/4-1.jpg);
+        background-image: url(../../images/4-1.jpg);
         padding-top: 1.2rem;
     }
     .your_scores_container{
@@ -145,5 +146,19 @@ export default {
         top: 0.5rem;
         left: 50%;
         margin-left: -5.975rem;
+    }
+    .submit_item {
+        background-image: url(/static/img/3-1.png);
+    }
+    .button_style {
+        display: block;
+        height: 2.1rem;
+        width: 4.35rem;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 16.5rem;
+        left: 50%;
+        margin-left: -2.4rem;
+        background-repeat: no-repeat;
     }
 </style>
