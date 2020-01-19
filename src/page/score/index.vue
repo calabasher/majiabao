@@ -18,7 +18,7 @@ export default {
             showHide: false, //是否显示提示
             score: 0, //分数
             scoreTips:'', //分数提示
-            rightAnswer: [2, 7, 12, 13, 18], //正确答案
+            rightAnswer: [12, 7, 31, -20, 19], //正确答案
             scoreTipsArr:[
                 'Apa kau tidak mengembalikan semua pengetahuan kepada guru sekolah dasar？',
                 'Tidak buruk, tapi masih perlu mengisi bahan bakar.',
@@ -148,7 +148,7 @@ export default {
         margin-left: -5.975rem;
     }
     .submit_item {
-        background-image: url(/static/img/3-1.png);
+        background-image: url(../../images/3-1.png);
     }
     .button_style {
         display: block;

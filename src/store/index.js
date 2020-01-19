@@ -16,7 +16,7 @@ const state = {
 		"topic_id": 20,
 		"active_topic_id": 4,
 		"type": "ONE",
-		"topic_name": "1、 1+1=",
+		"topic_name": "1、 1+1*10+1=",
 		"active_id": 1,
 		"active_title": "happy",
 		"active_topic_phase": "first",
@@ -30,48 +30,48 @@ const state = {
 		}, {
 			"topic_answer_id": 2,
 			"topic_id": 20,
-			"answer_name": "2",
+			"answer_name": "10",
 			"is_standard_answer": 0
 		}, {
 			"topic_answer_id": 3,
 			"topic_id": 20,
-			"answer_name": "4",
+			"answer_name": "11",
 			"is_standard_answer": 0
 		}, {
-			"topic_answer_id": 4,
+			"topic_answer_id": 12,
 			"topic_id": 20,
-			"answer_name": "5",
+			"answer_name": "12",
 			"is_standard_answer": 1
 		}]
 	}, {
 		"topic_id": 21,
 		"active_topic_id": 4,
 		"type": "MORE",
-		"topic_name": "2、1*1=",
+		"topic_name": "2、8*1-8=",
 		"active_id": 1,
 		"active_title": "",
 		"active_topic_phase": "happy",
 		"active_start_time": "two",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
-			"topic_answer_id": 5,
+			"topic_answer_id": 7,
 			"topic_id": 21,
-			"answer_name": "10",
+			"answer_name": "7",
 			"is_standard_answer": 1
 		}, {
 			"topic_answer_id": 6,
 			"topic_id": 21,
-			"answer_name": "10",
+			"answer_name": "1",
 			"is_standard_answer": 0
 		}, {
 			"topic_answer_id": 7,
 			"topic_id": 21,
-			"answer_name": "1",
+			"answer_name": "0",
 			"is_standard_answer": 0
 		}, {
 			"topic_answer_id": 8,
 			"topic_id": 21,
-			"answer_name": "0",
+			"answer_name": "2",
 			"is_standard_answer": 0
 		}]
 	}, {
@@ -85,9 +85,9 @@ const state = {
 		"active_start_time": "1479139200",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
-			"topic_answer_id": 9,
+			"topic_answer_id": 31,
 			"topic_id": 21,
-			"answer_name": "32",
+			"answer_name": "31",
 			"is_standard_answer": 1
 		}, {
 			"topic_answer_id": 10,
@@ -102,7 +102,7 @@ const state = {
 		}, {
 			"topic_answer_id": 12,
 			"topic_id": 21,
-			"answer_name": "31",
+			"answer_name": "32",
 			"is_standard_answer": 0
 		}]
 	}, {
@@ -116,7 +116,7 @@ const state = {
 		"active_start_time": "1479139200",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
-			"topic_answer_id": 13,
+			"topic_answer_id": -20,
 			"topic_id": 21,
 			"answer_name": "-20",
 			"is_standard_answer": 1
@@ -147,19 +147,19 @@ const state = {
 		"active_start_time": "1479139200",
 		"active_end_time": "1482163200",
 		"topic_answer": [{
-			"topic_answer_id": 17,
+			"topic_answer_id": 19,
 			"topic_id": 21,
-			"answer_name": "10",
+			"answer_name": "19",
 			"is_standard_answer": 1
 		}, {
 			"topic_answer_id": 18,
 			"topic_id": 21,
-			"answer_name": "19",
+			"answer_name": "4",
 			"is_standard_answer": 0
 		}, {
 			"topic_answer_id": 19,
 			"topic_id": 21,
-			"answer_name": "0",
+			"answer_name": "5",
 			"is_standard_answer": 0
 		}, {
 			"topic_answer_id": 20,
